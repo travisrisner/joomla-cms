@@ -632,7 +632,7 @@ final class Joomla extends CMSPlugin implements SubscriberInterface
         $schema['name']        = $contact->name;
 
         if ($contact->image && $contact->params->get('show_image')) {
-            $schema['image'] = HTMLHelper::_('cleanImageUrl', $contact->image)->url;
+            $schema['image'] = Uri::root() . HTMLHelper::_('cleanImageUrl', $contact->image)->url;
         }
 
         if ($contact->con_position && $contact->params->get('show_position')) {

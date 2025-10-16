@@ -467,11 +467,11 @@ final class Joomla extends CMSPlugin implements SubscriberInterface
 
         // Images
         if ($article->images->get('image_intro')) {
-            $schema['thumbnailUrl'] = HTMLHelper::_('cleanImageUrl', $article->images->get('image_intro'))->url;
+            $schema['thumbnailUrl'] = Uri::root() . HTMLHelper::_('cleanImageUrl', $article->images->get('image_intro'))->url;
         }
 
         if ($article->images->get('image_fulltext')) {
-            $schema['image'] = HTMLHelper::_('cleanImageUrl', $article->images->get('image_fulltext'))->url;
+            $schema['image'] = Uri::root() . HTMLHelper::_('cleanImageUrl', $article->images->get('image_fulltext'))->url;
         }
 
         // Categories

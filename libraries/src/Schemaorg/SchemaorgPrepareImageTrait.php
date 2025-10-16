@@ -10,6 +10,7 @@
 namespace Joomla\CMS\Schemaorg;
 
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Uri\Uri;
 
 // phpcs:disable PSR1.Files.SideEffects
 \defined('_JEXEC') or die;
@@ -48,7 +49,7 @@ trait SchemaorgPrepareImageTrait
             return $newImages;
         }
 
-        $img = HTMLHelper::_('cleanImageUrl', $image);
+        $img = Uri::root() . HTMLHelper::_('cleanImageUrl', $image);
 
         return $img->url ?? null;
     }
